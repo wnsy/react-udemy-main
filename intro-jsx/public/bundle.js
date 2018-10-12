@@ -86,15 +86,21 @@
 				);
 			});
 		};
+
+		var changeHandler = function changeHandler(event) {
+			console.log(event.target.value);
+		};
+
 		return _react2.default.createElement(
 			'div',
-			null,
+			{ className: 'red-background' },
 			_react2.default.createElement(Welcome, { firstName: 'Chloe', lastName: 'Hayward' }),
 			_react2.default.createElement(
 				'ul',
 				null,
 				nameMapper()
-			)
+			),
+			_react2.default.createElement('input', { onChange: changeHandler })
 		);
 	};
 

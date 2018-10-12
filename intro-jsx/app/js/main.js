@@ -17,12 +17,18 @@ const App = (() => {
 			<li key={i}>{name}</li>
 		)
 	);
+
+	const changeHandler = ((event) => {
+		console.log(event.target.value)
+	})
+
 	return (
-		<div>
+		<div className="red-background">
 			<Welcome firstName="Chloe" lastName="Hayward" />
 			<ul>
 				{nameMapper()}
 			</ul>
+			<input onChange={changeHandler} />
 		</div>
 	)
 });
