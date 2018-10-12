@@ -104,7 +104,37 @@
 		);
 	};
 
-	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
+	// ReactDOM.render(
+	//   <App />,
+	// 	document.getElementById('app')
+	// );
+
+
+	var MyApp = function MyApp(props) {
+		var element = _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(
+				'h1',
+				null,
+				'Hello to the virtual DOM'
+			),
+			_react2.default.createElement(
+				'h3',
+				null,
+				'I\'ve been rendered ',
+				props,
+				' times!'
+			)
+		);
+		_reactDom2.default.render(element, document.getElementById('app'));
+	};
+
+	var numTimes = 0;
+	setInterval(function () {
+		numTimes += 1;
+		MyApp(numTimes);
+	}, 1000);
 
 /***/ },
 /* 1 */

@@ -33,7 +33,35 @@ const App = (() => {
 	)
 });
 
-ReactDOM.render(
-  <App />,
-	document.getElementById('app')
-);
+// ReactDOM.render(
+//   <App />,
+// 	document.getElementById('app')
+// );
+
+
+
+
+
+
+
+
+
+
+const MyApp = ((props) => {
+	const element = (
+		<div>
+			<h1>Hello to the virtual DOM</h1>
+			<h3>I've been rendered {props} times!</h3>
+		</div>
+	)
+	ReactDOM.render(
+		element,
+		document.getElementById('app')
+	)
+});
+
+var numTimes = 0
+setInterval(() => {
+	numTimes += 1
+	MyApp(numTimes)
+}, 1000)
