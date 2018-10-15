@@ -103,20 +103,6 @@
 		}
 	});
 
-	// const App = (() => {
-	// 	const nameArray = ["Joe", "Doe", "Jane", "Judy"]
-	// 	const nameMapper = (() =>
-	//
-	// 	);
-	//
-	// 	const changeHandler = ((event) => {
-	// 		console.log(event.target.value)
-	// 	})
-	//
-	// 	return (
-	// 	)
-	// });
-
 	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
 
 /***/ },

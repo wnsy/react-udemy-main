@@ -10,39 +10,37 @@ const Welcome = ((props) => {
 	)
 })
 
-var App = React.createClass({
-	nameMapper: function () {
-		const nameArray = ["Joe", "Doe", "Jane", "Judy"]
+// es6
+class App extends React.Component {
+  nameMapper(nameArray) {
 		return nameArray.map((name,i) =>
 			<li key={i}>{name}</li>
 		)
-	},
+	}
 
-	render: function() {
+	render()
+	const nameArray = ["Joe", "Doe", "Jane", "Judy"]
 		return (
 			<div>
 				<Welcome firstName="Chloe" lastName="Hayward" />
-				<ul>
+				<ul>               
 					{this.nameMapper}
 				</ul>
+				<Welcome firstName="Jane" lastName="Doe" />
 			</div>
 		)
 	}
-})
+}
 
-// const App = (() => {
-// 	const nameArray = ["Joe", "Doe", "Jane", "Judy"]
-// 	const nameMapper = (() =>
-//
-// 	);
-//
-// 	const changeHandler = ((event) => {
-// 		console.log(event.target.value)
-// 	})
-//
-// 	return (
-// 	)
-// });
+var App = React.createClass({
+	nameMapper: function () {
+
+	},
+
+	render: function() {
+
+	}
+})
 
 ReactDOM.render(
   <App />,
