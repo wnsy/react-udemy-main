@@ -18,29 +18,19 @@ class App extends React.Component {
 		)
 	}
 
-	render()
-	const nameArray = ["Joe", "Doe", "Jane", "Judy"]
+	render() {
+	const nameArray = ["Joe", "Doe", "Jane", "Judy"];
 		return (
 			<div>
 				<Welcome firstName="Chloe" lastName="Hayward" />
-				<ul>               
-					{this.nameMapper}
+				<ul>
+					{this.nameMapper(nameArray)}
 				</ul>
 				<Welcome firstName="Jane" lastName="Doe" />
 			</div>
 		)
 	}
 }
-
-var App = React.createClass({
-	nameMapper: function () {
-
-	},
-
-	render: function() {
-
-	}
-})
 
 ReactDOM.render(
   <App />,
