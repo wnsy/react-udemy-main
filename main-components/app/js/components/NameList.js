@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Welcome from './Welcome';
+
 export default class NameList extends React.Component {
   nameMapper(nameArray) {
     return nameArray.map((name, i) =>
@@ -11,21 +13,13 @@ export default class NameList extends React.Component {
     const nameArray = ["Joe", "Doe", "Jane", "Judy"];
       return (
         <div>
+          <h3>I am number {this.props.number}</h3>
           <Welcome firstName="Chloe" lastName="Hayward" />
           <ul>
             {this.nameMapper(nameArray)}
           </ul>
-          <Welcome firstName="Chloe" lastName="Hayward" />
+          <Welcome firstName="Jenny" lastName="Hayward" />
         </div>
       )
   }
 }
-
-const Welcome = ((props) => {
-  return (
-    <div>
-      <h4>Welcome to test site, {props.firstName}</h4>
-      <h4>{props.lastName}</h4>
-    </div>
-  )
-})
