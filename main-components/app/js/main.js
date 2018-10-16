@@ -1,30 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import NameList from './components/NameList';
 
-
-
+// es6
 class App extends React.Component {
-	
-	
-	render() {
-		return (
-			<div className="row">
-				<NameList phrase="I'm on the bottom!" />
-			</div>
-		)
-	}
+
+  render() {
+    return (
+      <NameList />
+    )
+  }
 }
 
-
 ReactDOM.render(
-	<App />,
+  <App />,
 	document.getElementById('app')
 );
-
-
-
-
-
-
