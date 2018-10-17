@@ -7,7 +7,7 @@ export default class TimerButton extends React.Component {
 
   render() {
     return (
-      <button onClick={this.props.handleClick}>{this.props.time > 5 ? 'Timer over 5' : 'Timer under 5'}</button>
+      <button onClick={this.props.handleClick}>{this.props.isStarted ? 'Start timer' : 'Stop timer'}</button>
     )
   }
 }
