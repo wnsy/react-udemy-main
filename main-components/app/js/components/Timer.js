@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { TimerHeader } from './Timer/TimerHeader';
+import TimerButton from './Timer/TimerButton';
+
 export default class Timer extends React.Component {
   constructor() {
     super()
@@ -20,8 +23,8 @@ export default class Timer extends React.Component {
   render() {
     return (
       <div>
-        <h3>I've been running for: {this.state.time} secs</h3>
-        <button onClick={this.handleClick}>Click to start</button>
+        <TimerHeader time={this.state.time} />
+        <TimerButton handleClick={this.handleClick} />
       </div>
     )
   }
