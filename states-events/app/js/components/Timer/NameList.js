@@ -19,24 +19,24 @@ export default class NameList extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
+    this.setState({
+      event: event.type
+    })
   }
 
   nameFilter(event) {
+    let newNames = this.state.names.filter((name) => {
+      let fullName = `${name.first_name} ${name.last_name}`
+      return fullName.toLowerCase().includes(event.target.value.toLowerCase());
+    });
+    //capture the input
     this.setState({
-      filterText: event.target.value
-
+      names: newNames
     })
   }
 
   render() {
     let {names} = this.state; //ES6 way. but same as var names = this.state.names
-    let {filterText} = this.state;
-    if (filterText) {
-      names = names.filter((name) => {
-        let fullName = `${name.first_name} ${name.last_name}`;
-        return fullName.toLowerCase().includes(filterText.toLowerCase());
-      });
-    }
     return (
       <div>
         <h2>{this.state.event}</h2>
