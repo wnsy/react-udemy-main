@@ -4,7 +4,8 @@ export default class NameList extends React.Component {
   constructor() {
     super();
     this.state = {
-      names: []
+      names: [],
+      event: 'no event detected'
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,7 +18,12 @@ export default class NameList extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    console.log(event);
+    this.setState({
+      // read-only property returns a string containing the event's type.
+      // It is set when the event is constructed and is the name commonly used
+      // to refer to the specific event
+      event: event.type
+    })
   }
 
   render() {
@@ -25,10 +31,14 @@ export default class NameList extends React.Component {
     console.log(names)
     return (
       <div>
-        <form onSubmit={this.handleClick}>
-          <input type="text" />
-          <input type="submit" />
-        </form>
+        <h2>{this.state.event}</h2>
+        <input
+          onChange={this.handleClick}
+          onFocus={this.handleClick}
+          onBlur={this.handleClick}
+          onKeyPress={this.handleClick}
+          type="text"
+        />
         {names.map((name) => <h3 key={name.id}><a href="#" onClick={this.handleClick}>{name.first_name}</a></h3>)}
       </div>
     )
