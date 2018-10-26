@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NameList from './Timer/NameList'
+import FilterableNameList from './Timer/FilterableNameList'
 
 import Timer from './Timer';
 
@@ -51,7 +51,7 @@ export default class Layout extends React.Component {
             down stairs catch mouse and gave it as a present, yet attack feet.
         </p>
         <Timer />
-        <NameList names={this.props.names} />
+        <FilterableNameList names={this.props.names} />
       </div>
     )
   }
