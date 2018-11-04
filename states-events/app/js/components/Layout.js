@@ -50,9 +50,19 @@ export default class Layout extends React.Component {
             Chew iPad power cord kitten is playing with dead mouse run up and
             down stairs catch mouse and gave it as a present, yet attack feet.
         </p>
-        <Timer />
         <FilterableNameList names={this.props.names} />
+        <H1Styler>
+        <Timer />
+        An example
+        </H1Styler>
       </div>
     )
   }
+}
+
+const H1Styler = (props) => {
+  const bground = {
+    backgroundColor: "blue"
+  }
+  return <h1 style={bground}>{props.children}</h1>
 }
